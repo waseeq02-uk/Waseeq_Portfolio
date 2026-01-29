@@ -1,0 +1,92 @@
+{
+    "animation_studio": {
+        "cpu_requirements": {
+            "min_cores": 12,
+            "min_clock_speed": 3.0,
+            "preferred_architecture": "x86-64",
+            "special_features": ["high_single_thread_performance", "high_multi_thread_performance"]
+        },
+        "gpu_requirements": {
+            "min_memory": 8,
+            "min_cuda_cores": 5000,
+            "special_features": ["rt_cores", "tensor_cores", "blender_optimization"]
+        },
+        "memory_requirements": {
+            "min_capacity": 32,
+            "min_speed": 3200,
+            "ecc": false
+        },
+        "storage_requirements": {
+            "primary_type": "nvme",
+            "min_primary_capacity": 1,
+            "secondary_type": "ssd",
+            "min_secondary_capacity": 2
+        },
+        "software_requirements": [
+            "Blender",
+            "Autodesk Maya",
+            "Adobe Creative Suite",
+            "Various rendering engines"
+        ]
+    },
+    "scientific_research": {
+        "cpu_requirements": {
+            "min_cores": 16,
+            "min_clock_speed": 2.5,
+            "preferred_architecture": "x86-64",
+            "special_features": ["ecc_support", "high_multi_thread_performance"]
+        },
+        "gpu_requirements": {
+            "min_memory": 16,
+            "min_cuda_cores": 5000,
+            "special_features": ["ecc_memory", "scientific_optimization"]
+        },
+        "memory_requirements": {
+            "min_capacity": 64,
+            "min_speed": 3200,
+            "ecc": true
+        },
+        "storage_requirements": {
+            "primary_type": "nvme",
+            "min_primary_capacity": 2,
+            "secondary_type": "hdd",
+            "min_secondary_capacity": 4
+        },
+        "software_requirements": [
+            "MATLAB",
+            "Python with scientific libraries",
+            "R",
+            "TensorFlow/PyTorch"
+        ]
+    },
+    "gaming_studio": {
+        "cpu_requirements": {
+            "min_cores": 8,
+            "min_clock_speed": 3.5,
+            "preferred_architecture": "x86-64",
+            "special_features": ["high_single_thread_performance", "overclocking_support"]
+        },
+        "gpu_requirements": {
+            "min_memory": 8,
+            "min_cuda_cores": 5000,
+            "special_features": ["ray_tracing", "game_engine_optimization"]
+        },
+        "memory_requirements": {
+            "min_capacity": 32,
+            "min_speed": 3600,
+            "ecc": false
+        },
+        "storage_requirements": {
+            "primary_type": "nvme",
+            "min_primary_capacity": 1,
+            "secondary_type": "ssd",
+            "min_secondary_capacity": 2
+        },
+        "software_requirements": [
+            "Unreal Engine",
+            "Unity",
+            "Visual Studio",
+            "Adobe Creative Suite"
+        ]
+    }
+}

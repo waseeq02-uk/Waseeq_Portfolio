@@ -1,1 +1,69 @@
-
+{
+    "cpu_benchmarks": {
+        "animation": {
+            "single_thread_score": 1650,
+            "multi_thread_score": 20500,
+            "reference": "Puget Systems Benchmark for Blender"
+        },
+        "research": {
+            "single_thread_score": 1500,
+            "multi_thread_score": 25000,
+            "reference": "MATLAB Benchmark"
+        },
+        "gaming": {
+            "single_thread_score": 1800,
+            "multi_thread_score": 18000,
+            "reference": "Game Development Benchmark"
+        }
+    },
+    "gpu_benchmarks": {
+        "animation": {
+            "blender_score": 3500,
+            "maya_score": 2800,
+            "reference": "Puget Systems Benchmark"
+        },
+        "research": {
+            "cuda_score": 25000,
+            "opencl_score": 22000,
+            "reference": "Scientific Computing Benchmark"
+        },
+        "gaming": {
+            "directx_score": 18000,
+            "opengl_score": 16000,
+            "reference": "Game Engine Benchmark"
+        }
+    },
+    "memory_benchmarks": {
+        "animation": {
+            "bandwidth_mb_s": 50000,
+            "latency_ns": 70,
+            "reference": "Industry Standard"
+        },
+        "research": {
+            "bandwidth_mb_s": 55000,
+            "latency_ns": 65,
+            "reference": "Industry Standard"
+        },
+        "gaming": {
+            "bandwidth_mb_s": 60000,
+            "latency_ns": 60,
+            "reference": "Industry Standard"
+        }
+    },
+    "storage_benchmarks": {
+        "nvme_ssd": {
+            "sequential_read_mb_s": 7000,
+            "sequential_write_mb_s": 5000,
+            "random_read_iops": 500000,
+            "random_write_iops": 400000,
+            "reference": "Manufacturer Specifications"
+        },
+        "sata_ssd": {
+            "sequential_read_mb_s": 560,
+            "sequential_write_mb_s": 530,
+            "random_read_iops": 95000,
+            "random_write_iops": 90000,
+            "reference": "Manufacturer Specifications"
+        }
+    }
+}
