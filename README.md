@@ -2,26 +2,26 @@
 
 This repository is my personal portfolio containing completed assignments created during my studies at Coventry University.
 
-## 📁 Contents
+## Contents
 - Completed academic assignments  
 - Organized by module, subject, or topic  
 - Each folder includes relevant files and documentation  
 
-## 🎓 Academic Background
+## Academic Background
 - **Student:** Waseeq Ahmed  
 - **University:** Coventry University  
 
-## 🎯 Purpose
+## Purpose
 This portfolio is intended to:
 - Showcase my academic work and learning progress  
 - Demonstrate my problem-solving and technical skills  
 - Provide reviewers with a clear overview of my coursework  
 
-## 🧰 Skills & Tools
+## Skills & Tools
 - Skills and tools vary by assignment  
 - Details are provided within individual folders  
 
-## ✅ Status
+## Status
 All assignments in this repository are completed unless stated otherwise.
 
 ---
