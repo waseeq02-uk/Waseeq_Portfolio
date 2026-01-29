@@ -1,0 +1,30 @@
+{
+    "name": "Creative Visions Animation Studio",
+    "industry": "3D Animation and Visual Effects",
+    "size": "Medium",
+    "primary_use_cases": [
+        "3D modeling and animation",
+        "High-resolution rendering",
+        "Video editing and compositing",
+        "Texture creation and editing"
+    ],
+    "software_requirements": [
+        "Blender",
+        "Autodesk Maya",
+        "Adobe Creative Suite",
+        "Various rendering engines (Cycles, V-Ray, Arnold)"
+    ],
+    "performance_goals": {
+        "rendering_time_reduction": "40%",
+        "viewport_performance": "Smooth with complex scenes",
+        "video_editing": "4K support",
+        "reliability": "8+ hours continuous operation"
+    },
+    "budget": 3000.0,
+    "constraints": [
+        "Budget limit of $3,000 per workstation",
+        "Must be upgradeable for future needs",
+        "Energy efficiency to reduce operational costs",
+        "Low noise levels for studio environment"
+    ]
+}
