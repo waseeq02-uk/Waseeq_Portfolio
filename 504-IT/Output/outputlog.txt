@@ -1,0 +1,95 @@
+[>] Starting full workflow for client type: 'animation'
+==================================================
+Output will be saved to: 'output'
+
+[OK] Successfully created client profile for: Creative Visions Animation Studio
+   -> Saved client profile to 'output\client_profile.json'
+
+[OK] Successfully created hardware system: Creative Visions Animation 
+Workstation
+   Total Price: $3,161.00
+   -> Saved hardware system to 'output\hardware_system.json'
+
+[*] Running system benchmarks...
+Running all benchmarks...
+==================================================
+Benchmarking CPU performance for 2 seconds...     
+CPU benchmark completed in 0.06 seconds
+
+Benchmarking memory performance with 1000MB block...
+Memory benchmark completed
+Write bandwidth: 100.00 MB/s
+Read bandwidth: 120.00 MB/s
+
+Benchmarking storage performance with 1000MB file...
+Storage benchmark completed
+Write bandwidth: 50.00 MB/s
+Read bandwidth: 60.00 MB/s
+
+Benchmarking GPU performance for 10 seconds...
+GPU benchmark failed: PyTorch is not installed
+
+Benchmarking matrix operations with 1000x1000 matrices...
+Matrix operations benchmark completed
+Matrix multiplication: 7.89 GFLOPS
+
+Results saved to output\system_benchmark_results.json
+[OK] Benchmarks completed. Results saved to 'output\system_benchmark_results.json'
+
+[OK] Parallel processing demo completed. Results saved to 'output\parallel_processing_results.json'
+   Execution log saved to 'output\outputlog.txt'
+
+[*] Generating reports...
+[OK] Reports generated in 'output'
+
+==================================================
+[SUCCESS] Full workflow completed successfully!
+[INFO] All files are located in the 'output' directory.
+[*] No command provided — running full workflow with default client 'animation' and output 'output'.
+[>] Starting full workflow for client type: 'animation'
+==================================================
+Output will be saved to: 'output'
+
+[OK] Successfully created client profile for: Creative Visions Animation Studio
+   -> Saved client profile to 'output\client_profile.json'
+
+[OK] Successfully created hardware system: Creative Visions Animation 
+Workstation
+   Total Price: $3,161.00
+   -> Saved hardware system to 'output\hardware_system.json'
+
+[*] Running system benchmarks...
+Running all benchmarks...
+==================================================
+Benchmarking CPU performance for 2 seconds...
+CPU benchmark completed in 0.06 seconds
+
+Benchmarking memory performance with 1000MB block...
+Memory benchmark completed
+Write bandwidth: 100.00 MB/s
+Read bandwidth: 120.00 MB/s
+
+Benchmarking storage performance with 1000MB file...
+Storage benchmark completed
+Write bandwidth: 50.00 MB/s
+Read bandwidth: 60.00 MB/s
+
+Benchmarking GPU performance for 10 seconds...
+GPU benchmark failed: PyTorch is not installed
+
+Benchmarking matrix operations with 1000x1000 matrices...
+Matrix operations benchmark completed
+Matrix multiplication: 8.07 GFLOPS
+
+Results saved to output\system_benchmark_results.json
+[OK] Benchmarks completed. Results saved to 'output\system_benchmark_results.json'
+
+[OK] Parallel processing demo completed. Results saved to 'output\parallel_processing_results.json'
+   Execution log saved to 'output\outputlog.txt'
+
+[*] Generating reports...
+[OK] Reports generated in 'output'
+
+==================================================
+[SUCCESS] Full workflow completed successfully!
+[INFO] All files are located in the 'output' directory.

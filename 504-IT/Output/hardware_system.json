@@ -1,0 +1,135 @@
+{
+    "name": "Creative Visions Animation Workstation",
+    "client_type": "Animation Studio",
+    "total_price": 3161.0,
+    "components": [
+        {
+            "name": "AMD Ryzen 9 5950X",
+            "component_type": "CPU",
+            "price": 799.0,
+            "specs": {
+                "Cores": "16",
+                "Threads": "32",
+                "Base Clock": "3.4GHz",
+                "Boost Clock": "4.9GHz",
+                "Cache": "72MB",
+                "TDP": "105W",
+                "Architecture": "Zen 3 (7nm)"
+            },
+            "justification": "The Ryzen 9 5950X offers exceptional multi-threaded performance crucial for 3D rendering. With 16 cores and 32 threads, it can handle multiple rendering tasks simultaneously.",
+            "performance_impact": "According to benchmarks from Puget Systems, the Ryzen 9 5950X outperforms competing Intel processors in Blender rendering by approximately 15-20% at a similar price point."
+        },
+        {
+            "name": "NVIDIA RTX 3080",
+            "component_type": "GPU",
+            "price": 699.0,
+            "specs": {
+                "CUDA Cores": "8704",
+                "RT Cores": "68 (2nd generation)",
+                "Tensor Cores": "272 (3rd generation)",
+                "Memory": "10GB GDDR6X",
+                "Memory Interface": "320-bit",
+                "Power Consumption": "320W"
+            },
+            "justification": "The RTX 3080 provides exceptional performance for both viewport interactions and GPU-accelerated rendering. Its CUDA cores are well-supported by major 3D applications.",
+            "performance_impact": "In Blender's Cycles renderer, the RTX 3080 can reduce rendering times by up to 50% compared to the previous generation."
+        },
+        {
+            "name": "G.Skill Trident Z Neo 64GB DDR4-3600",
+            "component_type": "Memory",
+            "price": 329.0,
+            "specs": {
+                "Capacity": "64GB (4x16GB)",
+                "Type": "DDR4",
+                "Speed": "3600MHz",
+                "Timings": "16-19-19-39",
+                "Voltage": "1.35V"
+            },
+            "justification": "64GB of RAM provides sufficient capacity for complex 3D scenes, high-resolution textures, and multitasking between applications.",
+            "performance_impact": "According to Puget Systems' benchmarks, 64GB of RAM provides optimal performance for most 3D animation workflows."
+        },
+        {
+            "name": "Samsung 980 Pro 1TB NVMe SSD",
+            "component_type": "Primary Storage",
+            "price": 229.0,
+            "specs": {
+                "Capacity": "1TB",
+                "Interface": "PCIe 4.0 NVMe",
+                "Sequential Read": "Up to 7,000 MB/s",
+                "Sequential Write": "Up to 5,000 MB/s",
+                "Form Factor": "M.2 2280"
+            },
+            "justification": "The NVMe SSD provides lightning-fast access for the operating system, applications, and active projects.",
+            "performance_impact": "Fast storage significantly reduces loading times for large 3D scenes and assets. NVMe drives can reduce project loading times by up to 60% compared to SATA SSDs."
+        },
+        {
+            "name": "Samsung 870 EVO 4TB SATA SSD",
+            "component_type": "Secondary Storage",
+            "price": 399.0,
+            "specs": {
+                "Capacity": "4TB",
+                "Interface": "SATA III",
+                "Sequential Read": "Up to 560 MB/s",
+                "Sequential Write": "Up to 530 MB/s",
+                "Form Factor": "2.5-inch"
+            },
+            "justification": "The larger SATA SSD offers ample storage for completed projects at a more cost-effective price point.",
+            "performance_impact": "Provides sufficient storage for large project files while maintaining good performance for asset access."
+        },
+        {
+            "name": "ASUS ROG Strix X570-E Gaming",
+            "component_type": "Motherboard",
+            "price": 379.0,
+            "specs": {
+                "Chipset": "AMD X570",
+                "Socket": "AM4",
+                "Memory Support": "Up to 128GB DDR4 4800MHz+",
+                "PCIe Slots": "2x PCIe 4.0 x16, 1x PCIe 4.0 x1, 1x PCIe 3.0 x16",
+                "M.2 Slots": "2x PCIe 4.0 M.2",
+                "USB": "8x USB 3.2 Gen 2, 2x USB 2.0",
+                "Networking": "Intel 2.5G LAN, Wi-Fi 6 (802.11ax)"
+            },
+            "justification": "This motherboard provides excellent connectivity, PCIe 4.0 support, and robust power delivery for the high-performance components.",
+            "performance_impact": "PCIe 4.0 support provides double the bandwidth of PCIe 3.0, benefiting both GPU and storage performance."
+        },
+        {
+            "name": "Corsair RM850x",
+            "component_type": "Power Supply",
+            "price": 129.0,
+            "specs": {
+                "Wattage": "850W",
+                "Efficiency": "80+ Gold",
+                "Modular": "Fully Modular",
+                "Warranty": "10 Years"
+            },
+            "justification": "An 850W power supply provides sufficient headroom for the high-performance components while maintaining efficiency.",
+            "performance_impact": "The 80+ Gold certification ensures energy efficiency, reducing operational costs over time."
+        },
+        {
+            "name": "Noctua NH-D15",
+            "component_type": "CPU Cooler",
+            "price": 99.0,
+            "specs": {
+                "Height": "165mm",
+                "Fan Speed": "1500 RPM",
+                "Noise Level": "24.6 dBA",
+                "Compatibility": "AM4, LGA1200, LGA115x"
+            },
+            "justification": "The NH-D15 provides excellent cooling performance for the Ryzen 9 5950X while maintaining low noise levels.",
+            "performance_impact": "Effective cooling ensures consistent performance under heavy rendering loads and extends component lifespan."
+        },
+        {
+            "name": "Fractal Design Define 7 Compact",
+            "component_type": "Case",
+            "price": 99.0,
+            "specs": {
+                "Form Factor": "Mid Tower",
+                "Material": "Steel, Aluminum",
+                "Dimensions": "447 x 220 x 476 mm",
+                "Weight": "10.9 kg"
+            },
+            "justification": "This case offers good airflow, sound dampening features, and a professional appearance suitable for a studio environment.",
+            "performance_impact": "Good airflow ensures components stay cool under load, while sound dampening reduces noise in the studio environment."
+        }
+    ]
+}
