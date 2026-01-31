@@ -32,6 +32,22 @@ from benchmarking import SystemBenchmark
 from report_generator import ReportGenerator
 
 
+class RedirectOutput:
+    """Context manager to redirect stdout to a file."""
+    def __init__(self, filename):
+        self.filename = filename
+        self._original_stdout = sys.stdout
+
+    def __enter__(self):
+        self._file = open(self.filename, 'w')
+        sys.stdout = self._file
+        return self._file
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        sys.stdout = self._original_stdout
+        self._file.close()
+
+
 class HardwareSystemDesignApp:
     """Main application class for hardware system design and reporting."""
 
@@ -60,7 +76,7 @@ class HardwareSystemDesignApp:
             print("Valid types are: animation, research, gaming")
             return
 
-        print(f"✅ Successfully created client profile for: {self.client.name}")
+        print(f"[OK] Successfully created client profile for: {self.client.name}")
 
     def load_client_from_file(self, filepath: str) -> None:
         """
@@ -71,7 +87,7 @@ class HardwareSystemDesignApp:
         """
         try:
             self.client = Client.load_from_file(filepath)
-            print(f"✅ Successfully loaded client profile from: {filepath}")
+            print(f"[OK] Successfully loaded client profile from: {filepath}")
         except FileNotFoundError:
             print(f"Error: Client file not found at '{filepath}'")
         except Exception as e:
@@ -86,7 +102,7 @@ class HardwareSystemDesignApp:
         """
         self.hardware_system = get_recommended_system(client_type)
         if self.hardware_system:
-            print(f"✅ Successfully created hardware system: {self.hardware_system.name}")
+            print(f"[OK] Successfully created hardware system: {self.hardware_system.name}")
             print(f"   Total Price: ${self.hardware_system.get_total_price():,.2f}")
         else:
             print(f"Error: Could not create hardware system for client type '{client_type}'.")
@@ -100,7 +116,7 @@ class HardwareSystemDesignApp:
         """
         try:
             self.hardware_system = HardwareSystem.load_from_file(filepath)
-            print(f"✅ Successfully loaded hardware system from: {filepath}")
+            print(f"[OK] Successfully loaded hardware system from: {filepath}")
         except FileNotFoundError:
             print(f"Error: Hardware system file not found at '{filepath}'")
         except Exception as e:
@@ -113,7 +129,7 @@ class HardwareSystemDesignApp:
         Args:
             output_dir (str): The directory to save benchmark results and plots.
         """
-        print("🚀 Running system benchmarks...")
+        print("[*] Running system benchmarks...")
         
         benchmark = SystemBenchmark()
         results = benchmark.run_all_benchmarks()
@@ -122,14 +138,8 @@ class HardwareSystemDesignApp:
         results_path = os.path.join(output_dir, "system_benchmark_results.json")
         benchmark.save_results(results_path)
         
-        # Save plot to output directory
-        plot_path = os.path.join(output_dir, "system_benchmark.png")
-        if os.path.exists("system_benchmark.png"):
-            os.rename("system_benchmark.png", plot_path)
-        
         self.benchmark_results = results
-        print(f"✅ Benchmarks completed. Results saved to '{results_path}'")
-        print(f"   Benchmark plot saved to '{plot_path}'")
+        print(f"[OK] Benchmarks completed. Results saved to '{results_path}'")
 
     def run_parallel_processing_demo(self, output_dir: str = ".") -> None:
         """
@@ -138,28 +148,30 @@ class HardwareSystemDesignApp:
         Args:
             output_dir (str): The directory to save demo results and plots.
         """
-        print("🚀 Running parallel processing demonstration...")
+        os.makedirs(output_dir, exist_ok=True)
+        log_file_path = os.path.join(output_dir, "outputlog.txt")
         
-        demo = ParallelProcessingDemo()
-        demo.run_matrix_multiplication_benchmark(matrix_size=500)
-        demo.run_image_filtering_benchmark(image_size=(1000, 1000))
+        # Redirect output to log file
+        with RedirectOutput(log_file_path):
+            print("[*] Running parallel processing demonstration...")
+            
+            demo = ParallelProcessingDemo()
+            # Use smaller matrix size (100) for faster execution on Windows
+            # Larger sizes take significantly longer
+            results = demo.run_matrix_multiplication_benchmark(matrix_size=100, output_dir=output_dir)
+            
+            print("[OK] Parallel processing demo completed.")
         
         # Save results to JSON
         results_path = os.path.join(output_dir, "parallel_processing_results.json")
-        demo.save_results(results_path)
-        
-        # Move plots to output directory
-        matrix_plot_path = os.path.join(output_dir, "matrix_multiplication_benchmark.png")
-        if os.path.exists("matrix_multiplication_benchmark.png"):
-            os.rename("matrix_multiplication_benchmark.png", matrix_plot_path)
-        
-        image_plot_path = os.path.join(output_dir, "image_filtering_benchmark.png")
-        if os.path.exists("image_filtering_benchmark.png"):
-            os.rename("image_filtering_benchmark.png", image_plot_path)
+        with open(results_path, 'w') as f:
+            json.dump(results, f, indent=2)
 
-        self.parallel_results = demo.results
-        print(f"✅ Parallel processing demo completed. Results saved to '{results_path}'")
-        print(f"   Plots saved to '{matrix_plot_path}' and '{image_plot_path}'")
+        self.parallel_results = results
+        
+        # Print summary to main console
+        print(f"[OK] Parallel processing demo completed. Results saved to '{results_path}'")
+        print(f"   Execution log saved to '{log_file_path}'")
 
     def generate_reports(self, output_dir: str = ".") -> None:
         """
@@ -172,7 +184,7 @@ class HardwareSystemDesignApp:
             print("Error: Client and hardware system must be created before generating reports.")
             return
 
-        print("📝 Generating reports...")
+        print("[*] Generating reports...")
         
         report_generator = ReportGenerator(
             client=self.client,
@@ -182,7 +194,7 @@ class HardwareSystemDesignApp:
         )
         
         report_generator.generate_all_reports(output_dir)
-        print(f"✅ Reports generated in '{output_dir}'")
+        print(f"[OK] Reports generated in '{output_dir}'")
 
     def run_full_workflow(self, client_type: str, output_dir: str = ".") -> None:
         """
@@ -195,7 +207,7 @@ class HardwareSystemDesignApp:
             client_type (str): The type of client for the workflow.
             output_dir (str): The directory to save all output files.
         """
-        print(f"🎯 Starting full workflow for client type: '{client_type}'")
+        print(f"[>] Starting full workflow for client type: '{client_type}'")
         print("=" * 50)
 
         # Ensure output directory exists
@@ -229,8 +241,8 @@ class HardwareSystemDesignApp:
         print()
 
         print("=" * 50)
-        print("🎉 Full workflow completed successfully!")
-        print(f"📁 All files are located in the '{output_dir}' directory.")
+        print("[SUCCESS] Full workflow completed successfully!")
+        print(f"[INFO] All files are located in the '{output_dir}' directory.")
 
 
 def parse_arguments():
@@ -240,7 +252,8 @@ def parse_arguments():
         epilog="Example: python main.py workflow animation --output ./my_report"
     )
     
-    subparsers = parser.add_subparsers(dest="command", help="Available commands", required=True)
+    # Allow running without a subcommand; handle default behavior in `main()`
+    subparsers = parser.add_subparsers(dest="command", help="Available commands")
 
     # Full workflow command
     workflow_parser = subparsers.add_parser("workflow", help="Run the complete end-to-end workflow")
@@ -267,8 +280,17 @@ def parse_arguments():
 
 def main():
     """Main function to parse arguments and execute commands."""
+    import multiprocessing as mp
+    mp.set_start_method('spawn', force=True)  # Explicitly use spawn on Windows
+    
     args = parse_arguments()
     app = HardwareSystemDesignApp()
+
+    # If no command provided, run the full workflow by default.
+    if getattr(args, 'command', None) is None:
+        print("[*] No command provided — running full workflow with default client 'animation' and output 'output'.")
+        app.run_full_workflow('animation', 'output')
+        return
 
     if args.command == "workflow":
         app.run_full_workflow(args.client_type, args.output)
@@ -297,6 +319,12 @@ def main():
     else:
         # This case should not be reached due to 'required=True' in subparsers
         print("No command specified. Use --help for available commands.")
+
+
+if __name__ == "__main__":
+    import multiprocessing as mp
+    mp.freeze_support()  # Required for Windows multiprocessing
+    main()
 
 
 if __name__ == "__main__":
